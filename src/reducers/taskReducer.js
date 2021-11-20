@@ -1,7 +1,12 @@
 import { ADD_TASK } from "../actions/types";
 
 const initialState = {
-    tasks: []
+    taskList: [{
+        id: 1,
+        title: 'Task 1',
+        date: '2020-01-01',
+        description: 'Task 1 description',
+    }],
 };
 
 export default function taskReducer(state = initialState, action) {
@@ -9,9 +14,12 @@ export default function taskReducer(state = initialState, action) {
         case ADD_TASK:
             return {
                 ...state,
-                tasks: action.payload
+                taskList: [...state.taskList, action.payload],
             };
+
+
         default:
+            console.log('default run')
             return state;
     }
 }

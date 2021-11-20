@@ -1,7 +1,9 @@
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { addTask } from "../actions/taskActions";
 
 function AddTask() {
+    const dispatch = useDispatch();
+
     const handleSubmitTask = (e) => {
         e.preventDefault();
 
@@ -11,7 +13,7 @@ function AddTask() {
             description: e.target.description.value,
         }
 
-        addTask(data)
+        dispatch(addTask(data));
     }
 
     return (
@@ -25,4 +27,4 @@ function AddTask() {
     )
 }
 
-export default connect(null, { addTask })(AddTask);
+export default connect(null, { addTask })(AddTask)
