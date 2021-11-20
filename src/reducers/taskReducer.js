@@ -1,4 +1,4 @@
-import { ADD_TASK, DELETE_TASK } from "../actions/types";
+import { ADD_TASK, DELETE_TASK, EDIT_TASK } from "../actions/types";
 
 const initialState = {
     taskList: [{
@@ -21,6 +21,13 @@ export default function taskReducer(state = initialState, action) {
             return {
                 ...state,
                 taskList: state.taskList.filter(task => task.id !== action.payload),
+            };
+
+        case EDIT_TASK:
+            return {
+                ...state,
+                taskList: state.taskList.map(task =>
+                    task.id === action.payload.id ? action.payload : task),
             };
 
         default:
