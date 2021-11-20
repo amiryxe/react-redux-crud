@@ -4,7 +4,7 @@ const initialState = {
     tasks: []
 };
 
-export default function (state = initialState, action) {
+export default function taskReducer(state = initialState, action) {
     switch (action.type) {
         case ADD_TASK:
             return {
