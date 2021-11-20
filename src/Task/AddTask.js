@@ -11,8 +11,6 @@ function AddTask() {
             return 0
         });
 
-    const taskId = useSelector(state => state.tasks.taskId);
-
     const handleSubmitTask = (e) => {
         e.preventDefault();
 
@@ -34,7 +32,7 @@ function AddTask() {
             <input type="date" name="date" />
             <textarea name="description" cols="30" rows="3"></textarea>
 
-            <button>{taskId ? 'Edit' : 'Save'}</button>
+            <button>Save</button>
         </form>
     )
 }
