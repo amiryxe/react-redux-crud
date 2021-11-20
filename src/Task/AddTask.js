@@ -3,7 +3,13 @@ import { addTask } from "../actions/taskActions";
 
 function AddTask() {
     const dispatch = useDispatch();
-    const lastID = useSelector(state => state.tasks.taskList[state.tasks.taskList.length - 1].id);
+    const lastID =
+        useSelector(state => {
+            if (state.tasks.taskList.length > 0) {
+                return state.tasks.taskList[state.tasks.taskList.length - 1].id
+            }
+            return 0
+        });
 
     const handleSubmitTask = (e) => {
         e.preventDefault();
