@@ -6,3 +6,24 @@ body {
   max-width: 1000px;
   margin: 0 auto;
 }
+
+.tasks {
+  &__item {
+    background: #fff;
+    border-radius: 0.5rem;
+    border: 2px solid #ccc;
+    border-bottom-width: 3px;
+  }
+
+  &__add {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+
+    input,
+    textarea {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+  }
+}
