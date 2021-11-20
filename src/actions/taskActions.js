@@ -1,4 +1,4 @@
-import { ADD_TASK, GET_TASK_LIST } from "./types";
+import { ADD_TASK } from "./types";
 
 export const addTask = (data) => dispatch => {
     dispatch({

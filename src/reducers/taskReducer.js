@@ -17,9 +17,7 @@ export default function taskReducer(state = initialState, action) {
                 taskList: [...state.taskList, action.payload],
             };
 
-
         default:
-            console.log('default run')
             return state;
     }
 }
