@@ -1,9 +1,11 @@
-export default function TaskItem() {
+export default function TaskItem(props) {
+    const { title, date, description } = props.data;
+
     return (
         <div className="tasks__item">
-            <h1>task name</h1>
-            <h3>date</h3>
-            <p>description</p>
+            <h1>{title}</h1>
+            <h3>{date}</h3>
+            <p>{description}</p>
         </div>
     )
 }
