@@ -44,8 +44,8 @@ function TaskItem(props) {
                     <h2>{title}</h2>
                     <h3>{date}</h3>
                     <p>{description}</p>
-                    <button onClick={() => handleDelete(id)}>Delete</button>
-                    <button onClick={() => setIsEditing(true)}>Edit</button>
+                    <button className="btn--danger" onClick={() => handleDelete(id)}>Delete</button>
+                    <button className="btn--edit" onClick={() => setIsEditing(true)}>Edit</button>
                 </>
         }
     </div>
