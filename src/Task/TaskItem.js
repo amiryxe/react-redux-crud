@@ -36,8 +36,8 @@ function TaskItem(props) {
                     <br />
                     <br />
 
-                    <button>Apply</button>
-                    <button onClick={() => setIsEditing(false)}>Cancel</button>
+                    <button className="btn--success">Apply</button>
+                    <button type="button" onClick={() => setIsEditing(false)}>Cancel</button>
                 </form>
                 :
                 <>

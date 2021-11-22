@@ -24,6 +24,12 @@ button {
   }
 }
 
+.btn {
+  &--success {
+    background: green !important;
+  }
+}
+
 .tasks {
   border: 1px solid #ccc;
   margin: 2rem 0;
