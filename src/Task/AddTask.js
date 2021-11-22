@@ -28,6 +28,7 @@ function AddTask() {
 
     return (
         <form className="tasks__add" onSubmit={handleSubmitTask}>
+            <h3>Add new task</h3>
             <input type="text" name="title" />
             <input type="date" name="date" />
             <textarea name="description" cols="30" rows="3"></textarea>

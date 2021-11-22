@@ -1,11 +1,27 @@
 body {
   background: #eee;
   color: #333;
+  font-family: Helvetica, sans-serif;
 }
 
 #root {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+button {
+  background: #707070;
+  color: #eee;
+  border: 0;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .tasks {
@@ -23,12 +39,27 @@ body {
     padding: 1rem;
     width: calc(100% / 3 - 3rem - 2px);
     margin: 0.5rem;
+
+    h2 {
+      margin-top: 0;
+    }
+
+    button {
+      margin-right: 0.5rem;
+    }
   }
 
   &__add {
     display: flex;
     flex-direction: column;
     max-width: 50%;
+    background: #fff;
+    border-radius: 0.5rem;
+    padding: 1rem;
+
+    h3 {
+      margin-top: 0;
+    }
 
     input,
     textarea {
