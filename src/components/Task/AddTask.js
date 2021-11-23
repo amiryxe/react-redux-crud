@@ -1,5 +1,5 @@
 import { connect, useDispatch, useSelector } from "react-redux";
-import { addTask } from "../actions/taskActions";
+import { addTask } from "../../actions/taskActions";
 
 function AddTask() {
     const dispatch = useDispatch();

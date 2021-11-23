@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { connect, useDispatch } from "react-redux";
-import { deleteTask, editTask } from "../actions/taskActions";
+import { deleteTask, editTask } from "../../actions/taskActions";
 
 function TaskItem(props) {
     const { id, title, date, description } = props.data;
