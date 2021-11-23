@@ -24,6 +24,7 @@ function AddTask() {
         }
 
         dispatch(addTask(data));
+        dispatch(showAddTask(false));
 
         e.target.reset();
     }
