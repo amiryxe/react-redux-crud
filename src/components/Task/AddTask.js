@@ -1,5 +1,5 @@
 import { connect, useDispatch, useSelector } from "react-redux";
-import { addTask } from "../../actions/taskActions";
+import { addTask, showAddTask } from "../../actions/taskActions";
 
 function AddTask() {
     const dispatch = useDispatch();
@@ -10,6 +10,8 @@ function AddTask() {
             }
             return 0
         });
+
+    const isShow = useSelector(state => state.tasks.isShowAddTask);
 
     const handleSubmitTask = (e) => {
         e.preventDefault();
@@ -26,7 +28,7 @@ function AddTask() {
         e.target.reset();
     }
 
-    return (
+    return isShow ? (
         <form className="tasks__add" onSubmit={handleSubmitTask}>
             <h3>Add new task</h3>
             <label htmlFor="title">Title:</label>
@@ -38,9 +40,12 @@ function AddTask() {
             <label htmlFor="description">Description:</label>
             <textarea name="description" id="description" cols="30" rows="3"></textarea>
 
-            <button>Save</button>
+            <div>
+                <button className="btn--success" style={{ marginRight: '.5rem' }}>Save</button>
+                <button type="button" onClick={() => dispatch(showAddTask(false))}>Cancel</button>
+            </div>
         </form>
-    )
+    ) : ''
 }
 
 export default connect(null, { addTask })(AddTask)

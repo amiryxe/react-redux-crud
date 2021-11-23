@@ -1,4 +1,4 @@
-import { ADD_TASK, DELETE_TASK, EDIT_TASK } from "./types";
+import { ADD_TASK, DELETE_TASK, EDIT_TASK, IS_SHOW_ADD_TASK } from "./types";
 
 export const addTask = (data) => dispatch => {
     dispatch({
@@ -18,5 +18,12 @@ export const editTask = (data) => dispatch => {
     dispatch({
         type: EDIT_TASK,
         payload: data
+    });
+};
+
+export const showAddTask = (status) => dispatch => {
+    dispatch({
+        type: IS_SHOW_ADD_TASK,
+        payload: status
     });
 };
