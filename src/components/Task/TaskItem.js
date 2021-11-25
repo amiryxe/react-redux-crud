@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { connect, useDispatch } from "react-redux";
-import { deleteTask, editTask } from "../../actions/taskActions";
+import { connect, useDispatch, useSelector } from "react-redux";
+import { deleteTask, editTask, isDoneTask } from "../../actions/taskActions";
 
 function TaskItem(props) {
     const { id, title, date, description } = props.data;
     const dispatch = useDispatch();
     const [isEditing, setIsEditing] = useState(false);
+    const doneStatus = useSelector(state => state.tasks.taskList.find(task => task.id === id).isDone);
 
     const handleDelete = (id) => {
         dispatch(deleteTask(id))
@@ -25,7 +26,9 @@ function TaskItem(props) {
         setIsEditing(false);
     }
 
-    return <div className="tasks__item">
+    return <div className={
+        `tasks__item ${doneStatus ? 'tasks__item--done' : ''}`
+    }>
         {
             isEditing ?
                 <form onSubmit={handleEditSubmit}>
@@ -44,6 +47,7 @@ function TaskItem(props) {
                     <h2>{title}</h2>
                     <h3>{date}</h3>
                     <p>{description}</p>
+                    <input type="checkbox" defaultChecked={doneStatus} onChange={() => dispatch(isDoneTask(id))} />
                     <button className="btn--danger" onClick={() => handleDelete(id)}>Delete</button>
                     <button className="btn--edit" onClick={() => setIsEditing(true)}>Edit</button>
                 </>

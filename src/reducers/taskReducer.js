@@ -42,7 +42,10 @@ export default function taskReducer(state = initialState, action) {
             return {
                 ...state,
                 taskList: state.taskList.map(task =>
-                    task.id === action.payload.id ? action.payload : task),
+                    task.id === action.payload ? {
+                        ...task,
+                        isDone: !task.isDone
+                    } : task),
             };
 
         default:

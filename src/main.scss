@@ -54,6 +54,10 @@ button {
     width: calc(100% / 3 - 3rem - 2px);
     margin: 0.5rem;
 
+    &--done {
+      background: #f3f3f3;
+    }
+
     h2 {
       margin-top: 0;
     }

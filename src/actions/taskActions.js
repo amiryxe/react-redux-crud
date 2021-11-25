@@ -28,9 +28,9 @@ export const showAddTask = (status) => dispatch => {
     });
 };
 
-export const isDoneTask = (status) => dispatch => {
+export const isDoneTask = (id) => dispatch => {
     dispatch({
         type: IS_DONE_TASK,
-        payload: status
+        payload: id
     });
 }
