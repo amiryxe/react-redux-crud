@@ -23,10 +23,12 @@ function AddTask() {
             description: e.target.description.value,
         }
 
-        dispatch(addTask(data));
-        dispatch(showAddTask(false));
+        if (data.title) {
+            dispatch(addTask(data));
+            dispatch(showAddTask(false));
 
-        e.target.reset();
+            e.target.reset();
+        }
     }
 
     return isShow ? (
