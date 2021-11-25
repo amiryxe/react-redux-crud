@@ -47,9 +47,12 @@ function TaskItem(props) {
                     <h2>{title}</h2>
                     <h3>{date}</h3>
                     <p>{description}</p>
-                    <input type="checkbox" defaultChecked={doneStatus} onChange={() => dispatch(isDoneTask(id))} />
-                    <button className="btn--danger" onClick={() => handleDelete(id)}>Delete</button>
-                    <button className="btn--edit" onClick={() => setIsEditing(true)}>Edit</button>
+
+                    <footer>
+                        <button className="btn--danger" onClick={() => handleDelete(id)}>Delete</button>
+                        <button className="btn--edit" onClick={() => setIsEditing(true)}>Edit</button>
+                        <input type="checkbox" defaultChecked={doneStatus} onChange={() => dispatch(isDoneTask(id))} />
+                    </footer>
                 </>
         }
     </div>

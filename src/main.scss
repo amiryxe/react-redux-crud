@@ -55,7 +55,7 @@ button {
     margin: 0.5rem;
 
     &--done {
-      background: #f3f3f3;
+      background: #e4f0dd;
     }
 
     h2 {
@@ -66,7 +66,8 @@ button {
       margin-right: 0.5rem;
     }
 
-    input,
+    input[type="text"],
+    input[type="date"],
     textarea {
       width: 100%;
       border-radius: 3px;
@@ -75,6 +76,16 @@ button {
       line-height: 1rem;
       padding: 0.5rem;
       box-sizing: border-box;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      input {
+        margin-left: auto;
+      }
     }
   }
 
