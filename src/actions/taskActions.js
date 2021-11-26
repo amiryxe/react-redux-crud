@@ -1,4 +1,4 @@
-import { ADD_TASK, DELETE_TASK, EDIT_TASK, IS_SHOW_ADD_TASK, IS_DONE_TASK } from "./types";
+import { ADD_TASK, DELETE_TASK, EDIT_TASK, IS_SHOW_ADD_TASK, IS_DONE_TASK, SHOW_MODE } from "./types";
 
 export const addTask = (data) => dispatch => {
     dispatch({
@@ -32,5 +32,12 @@ export const isDoneTask = (id) => dispatch => {
     dispatch({
         type: IS_DONE_TASK,
         payload: id
+    });
+}
+
+export const showMode = (value) => dispatch => {
+    dispatch({
+        type: SHOW_MODE,
+        payload: value
     });
 }

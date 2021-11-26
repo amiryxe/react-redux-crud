@@ -8,7 +8,8 @@ const initialState = {
         description: 'Task 1 description',
         isDone: false
     }],
-    isShowAddTask: false
+    isShowAddTask: false,
+    showMode: 'all'
 };
 
 export default function taskReducer(state = initialState, action) {
