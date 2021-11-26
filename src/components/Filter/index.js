@@ -1,20 +1,20 @@
 export default function Filter() {
     return (
-        <>
+        <div class="tasks__fitler">
             <span>
-                <input type="checkbox" name="" id="all" />
+                <input type="radio" name="tasks_show" id="all" />
                 <label htmlFor="all">All tasks</label>
             </span>
 
             <span>
-                <input type="checkbox" name="" id="done" />
+                <input type="radio" name="tasks_show" id="done" />
                 <label htmlFor="done">Done</label>
             </span>
 
             <span>
-                <input type="checkbox" name="" id="all" />
-                <label htmlFor="all">Undone</label>
+                <input type="radio" name="tasks_show" id="undone" />
+                <label htmlFor="undone">Undone</label>
             </span>
-        </>
+        </div>
     )
 }
