@@ -5,8 +5,6 @@ export default function Filter() {
     const dispatch = useDispatch();
     const currentShowMode = useSelector(state => state.tasks.showMode);
 
-    console.log(currentShowMode)
-
     return (
         <div className="tasks__filter">
             <span>

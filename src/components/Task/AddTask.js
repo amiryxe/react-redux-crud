@@ -21,6 +21,7 @@ function AddTask() {
             title: e.target.title.value,
             date: e.target.date.value,
             description: e.target.description.value,
+            isDone: false
         }
 
         if (data.title) {
