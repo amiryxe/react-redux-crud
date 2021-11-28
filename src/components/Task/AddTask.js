@@ -39,7 +39,7 @@ function AddTask() {
             <input type="text" name="title" id="title" />
 
             <label htmlFor="date">Date:</label>
-            <input type="date" name="date" id="date" />
+            <input type="datetime-local" name="date" id="date" />
 
             <label htmlFor="description">Description:</label>
             <textarea name="description" id="description" cols="30" rows="3"></textarea>

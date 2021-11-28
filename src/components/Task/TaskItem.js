@@ -12,6 +12,10 @@ function TaskItem(props) {
         dispatch(deleteTask(id))
     }
 
+    const showDataTime = (moment) => {
+        return moment.split('T')[0] + '  ' + moment.split('T')[1].slice(0, 5);
+    }
+
     const handleEditSubmit = (e) => {
         e.preventDefault();
 
@@ -33,7 +37,7 @@ function TaskItem(props) {
             isEditing ?
                 <form onSubmit={handleEditSubmit}>
                     <input type="text" defaultValue={title} name="title" />
-                    <input type="date" defaultValue={date} name="date" />
+                    <input type="datetime-local" defaultValue={date} name="date" />
                     <textarea defaultValue={description} name="description" />
 
                     <br />
@@ -45,7 +49,7 @@ function TaskItem(props) {
                 :
                 <>
                     <h2>{title}</h2>
-                    <h3>{date}</h3>
+                    <h3>{showDataTime(date)}</h3>
                     <p>{description}</p>
 
                     <footer>

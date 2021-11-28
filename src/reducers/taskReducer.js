@@ -12,7 +12,7 @@ const initialState = {
     {
       id: 1,
       title: "Task 1",
-      date: "2020-01-01",
+      date: "2021-11-18T08:32",
       description: "Task 1 description",
       isDone: false,
     },
@@ -55,9 +55,9 @@ export default function taskReducer(state = initialState, action) {
         taskList: state.taskList.map((task) =>
           task.id === action.payload
             ? {
-                ...task,
-                isDone: !task.isDone,
-              }
+              ...task,
+              isDone: !task.isDone,
+            }
             : task
         ),
       };
