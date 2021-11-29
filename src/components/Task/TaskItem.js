@@ -13,7 +13,7 @@ function TaskItem(props) {
     }
 
     const showDataTime = (moment) => {
-        return moment.split('T')[0] + '  ' + moment.split('T')[1].slice(0, 5);
+        return moment ? moment.split('T')[0] + '  ' + moment.split('T')[1].slice(0, 5) : ''
     }
 
     const handleEditSubmit = (e) => {
