@@ -49,7 +49,10 @@ function AddTask() {
             <label htmlFor="description">Description:</label>
             <textarea name="description" id="description" cols="30" rows="3"></textarea>
 
-            <p className="tasks__error">{errText}</p>
+            {
+                errText &&
+                <p className="tasks__error">{errText}</p>
+            }
 
             <div>
                 <button className="btn--success" style={{ marginRight: '.5rem' }}>Save</button>
