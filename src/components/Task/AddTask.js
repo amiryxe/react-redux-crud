@@ -27,6 +27,7 @@ function AddTask() {
         }
 
         if (data.title) {
+            setErrText('');
             dispatch(addTask(data));
             dispatch(showAddTask(false));
 

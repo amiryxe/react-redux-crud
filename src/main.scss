@@ -121,6 +121,15 @@ button {
       margin-right: 1rem;
     }
   }
+
+  &__error {
+    background: #fdd;
+    border: 1px solid #ff8a8a;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    border-radius: 3px;
+    color: #912a2a;
+  }
 }
 
 .header {
