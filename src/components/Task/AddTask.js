@@ -1,5 +1,6 @@
 import { connect, useDispatch, useSelector } from "react-redux";
 import { addTask, showAddTask } from "../../actions/taskActions";
+import { useState } from 'react';
 
 function AddTask() {
     const dispatch = useDispatch();
@@ -12,7 +13,7 @@ function AddTask() {
         });
 
     const isShow = useSelector(state => state.tasks.isShowAddTask);
-    const errText = useSelector(state => state.tasks.errText);
+    const [errText, setErrText] = useState('');
 
     const handleSubmitTask = (e) => {
         e.preventDefault();
@@ -30,6 +31,8 @@ function AddTask() {
             dispatch(showAddTask(false));
 
             e.target.reset();
+        } else {
+            setErrText('Please enter title');
         }
     }
 
